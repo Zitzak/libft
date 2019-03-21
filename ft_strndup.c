@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_findchar.c                                      :+:    :+:            */
+/*   ft_strndup.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/21 16:43:50 by mgross         #+#    #+#                */
-/*   Updated: 2019/03/08 19:02:20 by mgross        ########   odam.nl         */
+/*   Created: 2019/03/20 10:41:15 by mgross         #+#    #+#                */
+/*   Updated: 2019/03/20 13:36:03 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** This function searches for the char c in string str. If it find the char it
-** returns the count (incl. the char) in intgers (starting at 1 not 0). If he
-** doesnt find c then it returnes a 0.
+** This function duplicates n number of bytes from src and returns a string. If
+** src is smaller then len, it will fill the rest up with deliminating zeros.
 */
 
-int		ft_findchar(const char *str, int c)
+char	*ft_strndup(const char *src, size_t len)
 {
-	size_t	count;
+	char	*str;
 
-	count = 0;
+	if (len <= 0)
+		return (NULL);
+	if (src == NULL)
+		return (NULL);
+	str = ft_strnew(len);
 	if (str == NULL)
-		return (0);
-	while (*str)
-	{
-		if (*str == ((unsigned char)c))
-		{
-			return (count + 1);
-		}
-		count++;
-		str++;
-	}
-	return (0);
+		return (NULL);
+	ft_strncpy(str, src, len);
+	return (str);
 }

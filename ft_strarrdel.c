@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcdup.c                                       :+:    :+:            */
+/*   ft_strarrdel.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/21 18:42:49 by mgross         #+#    #+#                */
-/*   Updated: 2019/03/20 10:49:23 by mgross        ########   odam.nl         */
+/*   Created: 2019/03/20 19:02:13 by mgross         #+#    #+#                */
+/*   Updated: 2019/03/20 19:10:03 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** This function creates a new string up to (excl) char c from string *str and
-** returns the new string.
+** This function frees all levels of an 2D array. This works only if the last
+** level of the 2D array is pointed to NULL
 */
 
-char	*ft_strcdup(const char *str, int c)
+void	ft_strarrdel(char **array)
 {
 	int		i;
-	char	*new;
 
-	if (str == NULL)
-		return (NULL);
-	i = ft_nchar(str, c) - 1;
-	if (i < 0)
-		return (NULL);
-	new = ft_strnew(i);
-	if (new == NULL)
-		return (NULL);
-	ft_strncpy(new, str, i);
-	return (new);
+	i = 0;
+	while (array[i] != NULL)
+	{
+		i++;
+	}
+	while (i >= 0)
+	{
+		ft_strdel(&array[i]);
+		i--;
+	}
 }

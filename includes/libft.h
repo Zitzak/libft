@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/17 18:39:18 by mgross         #+#    #+#                */
-/*   Updated: 2019/03/16 19:19:56 by mgross        ########   odam.nl         */
+/*   Updated: 2019/03/20 19:06:35 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 1000
 
 typedef	struct	s_list
 {
@@ -28,7 +28,6 @@ typedef	struct	s_list
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
-int				ft_findchar(const char *str, int c);
 int				ft_get_next_line(const int fd, char **line);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
@@ -54,6 +53,7 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			ft_memdel(void **ap);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
+int				ft_nchar(const char *str, int c);
 double			ft_power(int nb, int b);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putchar(char c);
@@ -63,6 +63,8 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putnbr(int n);
 void			ft_putstr_fd(char const *str, int fd);
 void			ft_putstr(const char *str);
+void			ft_putstrarr(const char **array);
+void			ft_strarrdel(char **array);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strcdup(const char *str, int c);
 char			*ft_strchr(const char *s, int c);
@@ -82,6 +84,7 @@ char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strndup(const char *src, size_t len);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strnstr(const char *haystack, const char

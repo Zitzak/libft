@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 14:28:17 by mgross         #+#    #+#                */
-/*   Updated: 2019/03/16 19:18:50 by mgross        ########   odam.nl         */
+/*   Updated: 2019/03/18 14:13:53 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ static int		ft_newline_list(t_list **head, int fd, char **line)
 	}
 	else
 	{
-		if (ft_findchar(temp->content, '\n') != 0)
+		if (ft_nchar(temp->content, '\n') != 0)
 		{
 			*line = ft_strcdup(temp->content, '\n');
 			replace = temp->content;
 			temp->content = ft_strdup(temp->content +
-			(ft_findchar(temp->content, '\n')));
+			(ft_nchar(temp->content, '\n')));
 			free(replace);
 			if (*((char*)temp->content) == '\0')
 				ft_lstfree(temp);
@@ -73,7 +73,7 @@ static void		ft_point_line(t_list *lst, char *str, char **line)
 
 	new = ft_strjoin(lst->content, str);
 	ft_strdel(&str);
-	if (ft_findchar(new, '\n') == 0)
+	if (ft_nchar(new, '\n') == 0)
 	{
 		*line = ft_strdup(new);
 		ft_lstfree(lst);
@@ -82,7 +82,7 @@ static void		ft_point_line(t_list *lst, char *str, char **line)
 	{
 		*line = ft_strcdup(new, '\n');
 		str = lst->content;
-		lst->content = ft_strdup(new + (ft_findchar(new, '\n')));
+		lst->content = ft_strdup(new + (ft_nchar(new, '\n')));
 		if (*((char*)lst->content) == '\0')
 			ft_lstfree(lst);
 	}
@@ -103,7 +103,7 @@ static int		ft_str_lst(t_list **head, char *str, int fd, char **line)
 	t_list	*lst;
 
 	lst = ft_lstfind_size(*head, fd);
-	if (ft_findchar(str, '\n') == 0 && lst->content == NULL)
+	if (ft_nchar(str, '\n') == 0 && lst->content == NULL)
 	{
 		if (*str != '\0')
 		{
@@ -117,7 +117,7 @@ static int		ft_str_lst(t_list **head, char *str, int fd, char **line)
 	if (lst->content == NULL)
 	{
 		*line = ft_strcdup(str, '\n');
-		lst->content = ft_strdup(str + (ft_findchar(str, '\n')));
+		lst->content = ft_strdup(str + (ft_nchar(str, '\n')));
 		free(str);
 		if (*((char*)lst->content) == '\0')
 			ft_lstfree(lst);
@@ -147,7 +147,7 @@ int				ft_get_next_line(const int fd, char **line)
 	if (ft_newline_list(&head, fd, line) == 1)
 		return (1);
 	new = ft_strnew(0);
-	while (ret != 0 && ft_findchar(buf, '\n') == 0)
+	while (ret != 0 && ft_nchar(buf, '\n') == 0)
 	{
 		ret = read(fd, buf, BUFF_SIZE);
 		if (ret == -1)

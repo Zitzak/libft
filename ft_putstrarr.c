@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcdup.c                                       :+:    :+:            */
+/*   ft_putstrarr.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/21 18:42:49 by mgross         #+#    #+#                */
-/*   Updated: 2019/03/20 10:49:23 by mgross        ########   odam.nl         */
+/*   Created: 2019/03/20 10:10:34 by mgross         #+#    #+#                */
+/*   Updated: 2019/03/20 10:44:59 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** This function creates a new string up to (excl) char c from string *str and
-** returns the new string.
+** This function prints out all levels of an array, sperated by a newline. The
+** last element of the 2D array has to point to NULL, otherwise behavior is
+** undefined.
 */
 
-char	*ft_strcdup(const char *str, int c)
+void	ft_putstrarr(const char **array)
 {
-	int		i;
-	char	*new;
+	int		j;
 
-	if (str == NULL)
-		return (NULL);
-	i = ft_nchar(str, c) - 1;
-	if (i < 0)
-		return (NULL);
-	new = ft_strnew(i);
-	if (new == NULL)
-		return (NULL);
-	ft_strncpy(new, str, i);
-	return (new);
+	j = 0;
+	while (array[j] != NULL)
+	{
+		ft_putstr(array[j]);
+		ft_putchar('\n');
+		j++;
+	}
 }

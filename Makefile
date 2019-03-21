@@ -6,7 +6,7 @@
 #    By: mgross <mgross@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/28 13:12:07 by mgross         #+#    #+#                 #
-#    Updated: 2019/03/16 19:16:36 by mgross        ########   odam.nl          #
+#    Updated: 2019/03/20 19:06:52 by mgross        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,10 @@ ft_strstr.c ft_strsub.c ft_strtrim.c \
 ft_tolower.c ft_toupper.c ft_putendl.c \
 ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
 ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-ft_findchar.c ft_lstfind_size.c \
+ft_nchar.c ft_lstfind_size.c \
 ft_strcdup.c ft_stricdup.c ft_lstunlink.c \
-ft_get_next_line.c
+ft_get_next_line.c ft_putstrarr.c ft_strndup.c \
+ft_strarrdel.c
 
 SRC_O = $(SRC_C:.c=.o)
 
