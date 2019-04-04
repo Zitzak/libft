@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/25 17:17:08 by mgross         #+#    #+#                */
-/*   Updated: 2019/02/06 10:07:59 by mgross        ########   odam.nl         */
+/*   Updated: 2019/04/03 11:28:40 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	i = ft_count_words(s, c);
-	str = (char**)malloc(sizeof(char*) * i + 1);
+	str = (char**)malloc(sizeof(char*) * (i + 1));
 	if (str == NULL)
 		return (NULL);
 	str = ft_malloc_string(str, s, c);

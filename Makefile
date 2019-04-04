@@ -6,7 +6,7 @@
 #    By: mgross <mgross@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/28 13:12:07 by mgross         #+#    #+#                 #
-#    Updated: 2019/03/20 19:06:52 by mgross        ########   odam.nl          #
+#    Updated: 2019/04/03 15:53:25 by mgross        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ ft_lstadd.c ft_lstiter.c ft_lstmap.c \
 ft_nchar.c ft_lstfind_size.c \
 ft_strcdup.c ft_stricdup.c ft_lstunlink.c \
 ft_get_next_line.c ft_putstrarr.c ft_strndup.c \
-ft_strarrdel.c
+ft_strarrdel.c ft_strarrlen.c
 
 SRC_O = $(SRC_C:.c=.o)
 
@@ -46,7 +46,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc -c  -I./includes $(FLAGS) $(SRC_C) && ar rcs $(NAME) $(SRC_O)
+	gcc -c -I./includes $(FLAGS) $(SRC_C) && ar rcs $(NAME) $(SRC_O)
 
 clean:
 	rm -f $(SRC_O)
