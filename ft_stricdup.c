@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 18:42:49 by mgross         #+#    #+#                */
-/*   Updated: 2019/02/28 12:49:19 by mgross        ########   odam.nl         */
+/*   Updated: 2019/03/20 10:54:34 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*ft_stricdup(const char *str, int c)
 	size_t	i;
 	char	*new;
 
-	i = ft_findchar(str, c);
+	if (str == NULL)
+		return (NULL);
+	i = ft_nchar(str, c);
 	if (i == 0)
 		return (NULL);
 	new = ft_strnew(i);

@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_findchar.c                                      :+:    :+:            */
+/*   ft_strarrdel.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/21 16:43:50 by mgross         #+#    #+#                */
-/*   Updated: 2019/03/08 19:02:20 by mgross        ########   odam.nl         */
+/*   Created: 2019/03/20 19:02:13 by mgross         #+#    #+#                */
+/*   Updated: 2019/04/03 12:17:30 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** This function searches for the char c in string str. If it find the char it
-** returns the count (incl. the char) in intgers (starting at 1 not 0). If he
-** doesnt find c then it returnes a 0.
+** This function frees all levels of an 2D array. This works only if the last
+** level of the 2D array is pointed to NULL
 */
 
-int		ft_findchar(const char *str, int c)
+void	ft_strarrdel(char **array)
 {
-	size_t	count;
+	int		i;
 
-	count = 0;
-	if (str == NULL)
-		return (0);
-	while (*str)
+	i = 0;
+	while (array[i] != NULL)
 	{
-		if (*str == ((unsigned char)c))
-		{
-			return (count + 1);
-		}
-		count++;
-		str++;
+		i++;
 	}
-	return (0);
+	while (i >= 0)
+	{
+		ft_strdel(&array[i]);
+		i--;
+	}
+	free(array);
 }

@@ -6,7 +6,7 @@
 #    By: mgross <mgross@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/28 13:12:07 by mgross         #+#    #+#                 #
-#    Updated: 2019/03/16 19:16:36 by mgross        ########   odam.nl          #
+#    Updated: 2019/07/16 15:47:46 by mgross        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,20 @@ ft_strstr.c ft_strsub.c ft_strtrim.c \
 ft_tolower.c ft_toupper.c ft_putendl.c \
 ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
 ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-ft_findchar.c ft_lstfind_size.c \
+ft_nchar.c ft_lstfind_size.c \
 ft_strcdup.c ft_stricdup.c ft_lstunlink.c \
-ft_get_next_line.c
+ft_get_next_line.c ft_putstrarr.c ft_strndup.c \
+ft_strarrdel.c ft_strarrlen.c ft_itoa_base.c \
+ft_strlwr.c ft_strupr.c ft_itoa_long.c \
+ft_append.c ft_insert.c ft_prepend.c \
+ft_replace.c ft_strnewfill.c ft_select.c \
+ft_strcalc_add.c ft_strcalc_mult.c \
+ft_strcalc_div.c ft_strcalc_multexptwo.c \
+ft_strcalc_valid.c ft_putnstr.c \
+ft_putnchar.c ft_putnstr_fd.c \
+ft_putnchar_fd.c
 
-SRC_O = $(SRC_C:.c=.o)
+SRC_O = ./*.o ./ft_printf/*.o
 
 HEADER = libft.h
 
@@ -45,12 +54,22 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc -c  -I./includes $(FLAGS) $(SRC_C) && ar rcs $(NAME) $(SRC_O)
+	@make re -C ./ft_printf/
+	@gcc -c -I./includes $(FLAGS) $(SRC_C)
+	@echo "Compiling libft..."
+	@ar rcs $(NAME) $(SRC_O)
+	@echo "SUCCES"
 
 clean:
-	rm -f $(SRC_O)
+	@rm -f $(SRC_O)
+	@make clean -C ./ft_printf
+	@echo "Cleaning..."
+	@echo "SUCCES"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@make fclean -C ./ft_printf
+	@echo "Fcleaning..."
+	@echo "SUCCES"
 
 re: fclean all
