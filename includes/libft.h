@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/17 18:39:18 by mgross         #+#    #+#                */
-/*   Updated: 2019/07/16 15:32:01 by mgross        ########   odam.nl         */
+/*   Updated: 2019/07/17 10:16:35 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			*ft_memset(void *b, int c, size_t len);
 int				ft_nchar(const char *str, int c);
 double			ft_power(int nb, int b);
 char			*ft_prepend(char **str, char const *prepend);
-int             ft_dprintf(const int fd, const char *format, ...);
+int				ft_dprintf(const int fd, const char *format, ...);
 int				ft_printf(const char *format, ...);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putchar(char c);
@@ -121,5 +121,4 @@ char			*ft_strupr(char *s);
 char			*ft_strtrim(char const *s);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
-
 #endif

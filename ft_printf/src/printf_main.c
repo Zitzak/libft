@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/11 12:56:21 by mgross         #+#    #+#                */
-/*   Updated: 2019/07/16 14:47:22 by mgross        ########   odam.nl         */
+/*   Updated: 2019/07/17 10:18:06 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,12 +141,10 @@ void		conversion(t_flags *conv, const char **format, va_list ap)
 int			ft_printf_fd(const int fd, const char *format, va_list ap)
 {
 	t_flags		*conv;
-	//va_list		ap;
 	int			ret;
 
 	conv = malloc(sizeof(t_flags));
 	initiate_struct(conv, fd);
-	//va_start(ap, format);
 	va_copy(conv->start, ap);
 	while (*format)
 	{
