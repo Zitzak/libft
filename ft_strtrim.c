@@ -5,63 +5,77 @@
 /*                                                     +:+                    */
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/25 14:54:32 by mgross         #+#    #+#                */
-/*   Updated: 2019/02/06 10:07:22 by mgross        ########   odam.nl         */
+/*   Created: 2019/11/09 14:37:05 by mgross         #+#    #+#                */
+/*   Updated: 2019/11/09 16:03:22 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_skip_begin(char const *s1)
+static int	check_in_set(char c, const char *set)
 {
-	int	c;
+	int		set_index;
 
-	c = 0;
-	while (s1[c] == ' ' || s1[c] == '\t' || s1[c] == '\n')
+	set_index = 0;
+	while (set[set_index] != '\0')
 	{
-		c++;
+		if (c == set[set_index])
+			return (1);
+		set_index++;
 	}
-	return (c);
+	return (0);
 }
 
-static int		ft_skip_end(char const *s1, size_t len)
+static int	skip_begin(char const *string, char const *set, int str_len)
 {
-	int c;
+	int		str_index;
 
-	c = 0;
-	while (s1[len - 1] == ' ' || s1[len - 1] == '\t' || s1[len - 1] == '\n')
+	str_index = 0;
+	while (string[str_index] != '\0')
 	{
-		c++;
-		len--;
+		if (check_in_set(string[str_index], set))
+			str_index++;
+		else
+			break ;
 	}
-	return (c);
+	if (str_index == str_len)
+		return (0);
+	else
+		return (str_index);
 }
 
-char			*ft_strtrim(char const *s)
+static int	skip_end(char const *string, char const *set, int str_len)
 {
-	size_t	i;
-	size_t	c[2];
-	size_t	len;
-	char	*str;
+	int		str_index;
 
-	if (s == NULL)
-		return (NULL);
-	len = ft_strlen(s);
-	c[0] = ft_skip_begin(s);
-	c[1] = c[0];
-	i = 0;
-	if (c[0] != len)
-		c[0] = c[0] + ft_skip_end(s, len);
-	str = ft_strnew(len - c[0]);
-	if (str == NULL)
-		return (NULL);
-	while ((len - c[0]) > 0)
+	str_index = str_len - 1;
+	while (str_index >= 0)
 	{
-		str[i] = s[c[1]];
-		i++;
-		len--;
-		c[1]++;
+		if (check_in_set(string[str_index], set))
+			str_index--;
+		else
+			break ;
 	}
-	str[i] = '\0';
-	return (str);
+	return (str_len - str_index);
+}
+
+char		*ft_strtrim1(char const *s1, char const *set)
+{
+	int		begin;
+	int		str_len;
+	int		end;
+	char	*new_str;
+
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	str_len = ft_strlen(s1);
+	begin = skip_begin(s1, set, str_len);
+	end = skip_end(s1, set, str_len);
+	str_len = str_len - (begin + end);
+	new_str = (char*)malloc(sizeof(char) * (str_len + 1));
+	if (new_str == NULL)
+		return (NULL);
+	new_str = ft_strncpy(new_str, &(s1[begin]), (size_t)str_len + 1);
+	new_str[str_len + 1] = '\0';
+	return (new_str);
 }

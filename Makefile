@@ -6,7 +6,7 @@
 #    By: mgross <mgross@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/28 13:12:07 by mgross         #+#    #+#                 #
-#    Updated: 2019/07/16 15:47:46 by mgross        ########   odam.nl          #
+#    Updated: 2019/08/06 15:47:16 by mgross        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ ft_strcalc_add.c ft_strcalc_mult.c \
 ft_strcalc_div.c ft_strcalc_multexptwo.c \
 ft_strcalc_valid.c ft_putnstr.c \
 ft_putnchar.c ft_putnstr_fd.c \
-ft_putnchar_fd.c
+ft_putnchar_fd.c ft_strcpy_newline.c \
+ft_mem_array_alloc.c
 
 SRC_O = ./*.o ./ft_printf/*.o
 

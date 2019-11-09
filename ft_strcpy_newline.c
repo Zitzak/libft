@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_bzero.c                                         :+:    :+:            */
+/*   ft_strcpy_newline.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/14 08:19:28 by mgross         #+#    #+#                */
-/*   Updated: 2019/09/13 11:31:56 by mgross        ########   odam.nl         */
+/*   Created: 2019/01/17 16:41:30 by mgross         #+#    #+#                */
+/*   Updated: 2019/07/11 12:51:03 by Marvin        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strcpy_newline(char *dst, const char *src)
 {
-	size_t	i;
-	char	*str;
+	int i;
 
-	str = s;
 	i = 0;
-	while (i < n)
+	while (src[i] != '\n')
 	{
-		str[i] = '\0';
+		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
+	return (dst);
 }

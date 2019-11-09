@@ -6,7 +6,7 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/17 18:39:18 by mgross         #+#    #+#                */
-/*   Updated: 2019/07/17 10:16:35 by mgross        ########   odam.nl         */
+/*   Updated: 2019/10/08 12:32:30 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ t_list			*ft_lstfind_size(t_list *head, size_t size);
 void			ft_lstiter(t_list *lst, void(*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list			*ft_lstnew(void const *content, size_t content_size);
+void			**ft_mem_array_alloc(size_t x_dim, size_t size_x,
+				size_t size_y);
 void			*ft_memalloc(size_t size);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
@@ -79,7 +81,7 @@ void			ft_putstrarr(const char **array);
 char			*ft_select(char **str, size_t pos, size_t len);
 char			*ft_replace(char **str, char const *insert, size_t pos, \
 				size_t len);
-void			ft_strarrdel(char **array);
+void			ft_strarrdel(char ***array, size_t size_x);
 size_t			ft_strarrlen(const char **array);
 char			*ft_strcalc_add(char **nb, const char *s2);
 char			*ft_strcalc_mult(char **nb);
@@ -92,6 +94,7 @@ char			*ft_strchr(const char *s, int c);
 void			ft_strclr(char *s);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dst, const char *src);
+char			*ft_strcpy_newline(char *dst, const char *src);
 void			ft_strdel(char **as);
 char			*ft_strdup(const char *s1);
 int				ft_strequ(char const *s1, char const *s2);
