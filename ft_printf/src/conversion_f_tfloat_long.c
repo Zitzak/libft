@@ -6,11 +6,11 @@
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/13 11:06:40 by nstabel        #+#    #+#                */
-/*   Updated: 2019/06/03 14:17:50 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 static void		get_sign_long(t_float *dbl)
 {

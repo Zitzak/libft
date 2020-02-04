@@ -6,11 +6,11 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/16 14:42:18 by mgross         #+#    #+#                */
-/*   Updated: 2019/07/17 10:15:23 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int		ft_printf(const char *format, ...)
 {

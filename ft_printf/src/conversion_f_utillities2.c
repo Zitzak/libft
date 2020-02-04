@@ -6,11 +6,11 @@
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/13 11:10:08 by nstabel        #+#    #+#                */
-/*   Updated: 2019/06/01 18:09:51 by nstabel       ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 static void		putstr_to_buf(t_flags *conv, t_float *dbl)
 {

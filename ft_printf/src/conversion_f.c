@@ -6,11 +6,11 @@
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/11 14:18:32 by nstabel        #+#    #+#                */
-/*   Updated: 2019/06/01 22:18:07 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 void		put_flags_to_buf(t_flags *conv)
 {

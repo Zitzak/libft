@@ -6,11 +6,11 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/19 12:22:36 by mgross         #+#    #+#                */
-/*   Updated: 2019/07/16 15:25:18 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 /*
 ** This functions clears the variables so it can be used for the next

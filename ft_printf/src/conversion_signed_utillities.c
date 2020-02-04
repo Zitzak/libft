@@ -6,11 +6,11 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/01 18:10:10 by mgross         #+#    #+#                */
-/*   Updated: 2019/06/03 14:06:39 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 /*
 ** This function cleares the flags FLAG_PLUS and FLAG_SPACE if they are

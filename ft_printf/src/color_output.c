@@ -6,11 +6,11 @@
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/08 15:18:01 by nstabel        #+#    #+#                */
-/*   Updated: 2019/08/29 14:01:25 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/21 10:39:29 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 /*
 ** This function searches for specific definition inside the string. If it

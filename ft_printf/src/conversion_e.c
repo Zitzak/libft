@@ -6,11 +6,11 @@
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/20 17:50:13 by nstabel        #+#    #+#                */
-/*   Updated: 2019/06/03 13:55:16 by nstabel       ########   odam.nl         */
+/*   Updated: 2020/01/21 10:26:46 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 /*
 ** The exponent is returned to conversion_e().

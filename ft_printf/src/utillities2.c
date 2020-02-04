@@ -6,11 +6,11 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/06/01 16:38:25 by mgross         #+#    #+#                */
-/*   Updated: 2019/07/16 14:37:43 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 13:56:42 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 /*
 ** This function initiates the diffrent variables inside the structure.
@@ -25,6 +25,7 @@ void		initiate_struct(t_flags *conv, const int fd)
 	conv->width = -1;
 	conv->precision = -1;
 	conv->specifier = '\0';
+	conv->delim = 0;
 }
 
 /*

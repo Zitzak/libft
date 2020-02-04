@@ -6,11 +6,11 @@
 /*   By: mgross <mgross@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/24 12:36:39 by mgross         #+#    #+#                */
-/*   Updated: 2019/06/03 13:52:01 by mgross        ########   odam.nl         */
+/*   Updated: 2020/01/17 19:36:06 by mgross        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 /*
 ** This function checks which char to print, corrects the width with the size
